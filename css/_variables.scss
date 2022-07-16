@@ -1,0 +1,32 @@
+/* COLOURS */
+
+$color-skin: #fde4cf;
+$color-pink: #ff939a;
+$color-purple: #f1c0e8;
+$color-violet: #cfbaf0;
+$color-blue: #a3c4f3;
+$color-cyan: #90dbf4;
+$color-turquoise: #8eecf5;
+$color-seagreen: #98f5e1;
+$color-green: #64da2d;
+$color-black: #131516;
+$color-pinkh: #f547f5;
+$color-blueh: #19b2ff;
+$color-yellow: #f1ee1c;
+$color-greenh: #0bff24;
+$color-redh: #ff0b0b;
+
+/* MIXINS */
+
+@mixin highlight($color){
+    content: "";
+    background-color: $color;
+    width: 100%;
+    height: 1.2em;
+    position: absolute;
+    z-index: -1;
+    filter: url(#marker-shape);
+    left: -0.3em;
+    top: 0.05em;
+    padding: 0 0.25em;
+}

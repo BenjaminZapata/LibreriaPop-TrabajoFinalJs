@@ -1,0 +1,424 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+/* COLOURS */
+/* MIXINS */
+*::-webkit-scrollbar {
+  width: 15px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 70px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  background-color: brown;
+}
+
+:root {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: rgb(27, 27, 27);
+  box-sizing: inherit;
+  cursor: url("../img/icons8-edit-100.png"), auto;
+}
+
+img, a {
+  cursor: url("../img/icons8-edit-100.png"), auto;
+}
+
+button {
+  cursor: url("../img/icons8-edit-100.png"), auto;
+}
+
+@media only screen and (max-width: 54.0625rem) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 42rem) {
+  :root {
+    font-size: 12px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #e5e5f7;
+  background-image: linear-gradient(rgba(64, 64, 64, 0.44) 1.3px, transparent 1.3px), linear-gradient(to right, rgba(64, 64, 64, 0.15) 1.3px, #e5e5f7 1.3px);
+  background-size: 26px 26px;
+  font-family: "Neucha", cursive;
+}
+
+.title {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+}
+.title span {
+  position: relative;
+}
+.title span.highlight-yellow:before {
+  content: "";
+  background-color: #f1ee1c;
+  width: 100%;
+  height: 1.2em;
+  position: absolute;
+  z-index: -1;
+  filter: url(#marker-shape);
+  left: -0.3em;
+  top: 0.05em;
+  padding: 0 0.25em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 95vw;
+  top: 0;
+  z-index: 999;
+}
+nav .nav_logo {
+  width: 150px;
+  padding: 1rem 0 1rem 0;
+}
+nav .nav_socialmedia a img {
+  width: 50px;
+  padding: 0.1rem;
+  margin: 0 1rem 0 auto;
+  transition: all 0.25s ease-in-out;
+}
+nav .nav_socialmedia a img:hover {
+  transform: scale(1.25);
+}
+
+@media only screen and (min-width: 54.0625rem) {
+  #store {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0.5rem;
+    min-height: 10rem;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+  #store #store--menu {
+    width: 80%;
+    background-color: rgba(245, 245, 245, 0.75);
+    border: 1px solid black;
+  }
+  #store #store--menu select {
+    font-family: "Neucha", cursive;
+    font-size: 0.8rem;
+    margin: 1rem 1.75rem;
+    padding: 0.3rem;
+  }
+  #store aside {
+    width: 19%;
+    background-color: rgba(245, 245, 245, 0.75);
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 40rem;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  #store aside span {
+    position: relative;
+  }
+  #store aside span.highlight-red:before {
+    content: "";
+    background-color: #ff0b0b;
+    width: 100%;
+    height: 1.2em;
+    position: absolute;
+    z-index: -1;
+    filter: url(#marker-shape);
+    left: -0.3em;
+    top: 0.05em;
+    padding: 0 0.25em;
+  }
+  #store aside #cart {
+    width: 100%;
+  }
+  #store aside .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+    gap: 0.15rem;
+    margin: 0.1rem 0.25rem;
+    border: 1px solid black;
+  }
+  #store aside .item img {
+    width: 5rem;
+    height: 5rem;
+    margin: 0.15rem;
+    border: rgb(27, 27, 27) 0.5px solid;
+  }
+  #store aside .item .item--info h5 {
+    max-width: 15ch;
+    margin: 0.25rem 0.25rem;
+    font-size: 0.8rem;
+  }
+  #store aside .payButton {
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    background-color: #64da2d;
+    border-radius: 3px;
+    border: 1px black solid;
+    font-family: "Neucha", cursive;
+    font-weight: bold;
+    transition: all 0.1s linear;
+  }
+  #store aside .payButton:hover {
+    transform: translateY(-0.15rem);
+  }
+}
+@media only screen and (max-width: 54.0625rem) {
+  #store {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    min-height: 10rem;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+  #store #store--menu {
+    background-color: rgba(245, 245, 245, 0.75);
+    min-height: 20rem;
+    border: 1px solid black;
+  }
+  #store #store--menu select {
+    font-family: "Neucha", cursive;
+    font-size: 0.8rem;
+    margin: 1rem 1.75rem;
+    padding: 0.3rem;
+  }
+  #store aside {
+    background-color: rgba(245, 245, 245, 0.75);
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 1rem;
+  }
+  #store aside span {
+    position: relative;
+  }
+  #store aside span.highlight-yellow:before {
+    content: "";
+    background-color: #f1ee1c;
+    width: 100%;
+    height: 1.2em;
+    position: absolute;
+    z-index: -1;
+    filter: url(#marker-shape);
+    left: -0.3em;
+    top: 0.05em;
+    padding: 0 0.25em;
+  }
+  #store aside .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+    gap: 0.15rem;
+    margin: 0.1rem 0.25rem;
+    border: 1px solid black;
+  }
+  #store aside .item img {
+    width: 5rem;
+    height: 5rem;
+    margin: 0.15rem;
+    border: rgb(27, 27, 27) 0.5px solid;
+  }
+  #store aside .item .item--info h5 {
+    max-width: 15ch;
+    margin: 0.25rem 0.25rem;
+    font-size: 0.8rem;
+  }
+  #store aside .payButton {
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    background-color: #64da2d;
+    border-radius: 3px;
+    border: 1px black solid;
+    font-family: "Neucha", cursive;
+    font-weight: bold;
+    transition: all 0.1s linear;
+  }
+  #store aside .payButton:hover {
+    transform: translateY(-0.15rem);
+  }
+}
+#store--products {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  justify-content: center;
+}
+#store--products .card {
+  width: 9.5rem;
+  height: 16.5rem;
+  background-color: rgba(245, 245, 245, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: solid 1px black;
+  text-align: center;
+}
+#store--products .card img {
+  width: 75%;
+  height: auto;
+  border: rgb(27, 27, 27) 1px solid;
+}
+#store--products .card h4, #store--products .card h3, #store--products .card button {
+  margin: 0.25rem 0;
+  max-width: 18ch;
+}
+#store--products .card .addToCart {
+  padding: 0.25rem 0.5rem;
+  background-color: rgb(245, 211, 21);
+  border-radius: 3px;
+  border: 1px black solid;
+  font-family: "Neucha", cursive;
+  font-weight: bold;
+  transition: all 0.1s linear;
+}
+#store--products .card button:hover {
+  transform: translateY(-0.15rem);
+}
+
+#cart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+#cart .item {
+  min-width: 13rem;
+  padding: 0.2rem;
+}
+#cart .item--info {
+  padding: 0.1rem;
+  overflow: hidden;
+  text-align: center;
+  margin: auto;
+}
+#cart .item--info h5 {
+  font-size: 0.7em;
+}
+#cart .item--info .removeFromCart {
+  padding: 0.2rem 0.35rem;
+  background-color: rgba(229, 0, 0, 0.75);
+  border-radius: 3px;
+  border: 1px black solid;
+  font-family: "Neucha", cursive;
+  transition: all 0.1s linear;
+  color: antiquewhite;
+  letter-spacing: 0.1rem;
+  font-size: 0.7em;
+  transition: all 0.1s linear;
+}
+#cart .item--info button:hover {
+  transform: translateY(-0.15rem);
+}
+
+footer {
+  background-color: rgba(245, 245, 245, 0.75);
+  min-height: 5rem;
+  border: 1px solid black;
+  margin: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+footer h2 {
+  margin: 0;
+}
+footer blockquote {
+  text-align: center;
+}
+footer blockquote p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+footer figcaption {
+  align-self: flex-end;
+  font-style: italic;
+}
+
+#modal {
+  padding: 1rem;
+  border: black 1px solid;
+  position: fixed;
+  background-color: rgba(245, 245, 245, 0.95);
+  top: 15%;
+  right: 25%;
+  bottom: 15%;
+  left: 25%;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#modal h2 {
+  margin-bottom: 2rem;
+}
+#modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#modal form label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+#modal form input {
+  margin-bottom: 1rem;
+}
+#modal form #confirmarPago {
+  padding: 0.25rem 0.5rem;
+  background-color: #64da2d;
+  border-radius: 3px;
+  border: 1px black solid;
+  font-family: "Neucha", cursive;
+  font-weight: bold;
+  transition: all 0.1s linear;
+  width: 40%;
+}
+#modal form #confirmarPago:hover {
+  transform: translateY(-0.15rem);
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}/*# sourceMappingURL=index.css.map */
